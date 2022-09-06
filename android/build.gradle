@@ -1,0 +1,45 @@
+group 'com.jiguang.jpush.jpush_flutter'
+version '1.0'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 17
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation 'cn.jiguang.sdk:jpush:4.8.1'
+    implementation 'cn.jiguang.sdk:jcore:3.3.2'
+}
